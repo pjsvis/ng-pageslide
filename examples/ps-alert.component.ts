@@ -1,5 +1,5 @@
 // TODO: implement a $timeout to auto-close the pageslide
-angular.module("app").component('psToastr', {
+angular.module("app").component('psAlert', {
     bindings: {
         title: '<',
         message: '<'
@@ -17,7 +17,7 @@ angular.module("app").component('psToastr', {
     template: `
 <div>
     <a class="tiny button" href="" ng-click="vm.toggle()">
-        ps-toastr
+        ps-alert
     </a>
     <div pageslide 
             ps-side="bottom" 
@@ -25,13 +25,27 @@ angular.module("app").component('psToastr', {
             ps-key-listener="true"
             ps-body-class="true"
             ps-auto-close="true>
-        <div style="padding:20px" id="demo-right" >
-                <h2>ps-toastr</h2>           
+        <div>
+                <h2>ps-alert</h2>           
                 <div ng-if="vm.checked">
-                  <div>toastr messages</div>
+                  <h4>ps-alert</h4>
                   <ol>
+                    <li>TODO: fix height to contents or allow scroll</li>
                     <li>invoke from current view as error handler</li>
                     <li>invoke from $window.onerror in nav.component</li>
+                    <li>Add a $timeout to close the pageslide after a few seconds</li>
+                    <li>Add a close icon</li>
+                  </ol>
+                  <h4>params</h4>
+                  <ol>
+                    <li>title</li>
+                    <li>message</li>
+                    <li>actions</li>
+                  </ol>                  
+                  <h4>actions</h4>
+                  <ol>
+                    <li>fuged it</li>
+                    <li>report it</li>
                   </ol>
                   <div>[ nav, esc, click ] to dismiss</div>   
                 </div>                             

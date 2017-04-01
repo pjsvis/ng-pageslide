@@ -38,6 +38,3 @@ angular.module("app").component('psMessage', {
 </div>
 `
 });
-/*
-
- */
