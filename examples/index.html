@@ -7,7 +7,7 @@
     <meta name="description" content="Ng-pageslide : AngularJS sliding panel for serving additional content" />
 
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/foundation/5.0.0/css/foundation.min.css">
-    <link rel="stylesheet" type="text/css" href="app.css">
+    <link rel="stylesheet" type="text/css" href="ng-pageslide.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
     <script src="../dist/angular-pageslide-directive.js"></script>
@@ -28,180 +28,196 @@
     <div id="main_content_wrap" class="outer" style="padding:20px">
         <header>
             <h1>
-                <a name="angularjs-pageslide-directive" class="anchor" href="#angularjs-pageslide-directive"><span class="octicon octicon-link"></span></a>AngularJS
-                Pageslide directive
+                <a name="angularjs-pageslide-directive" class="anchor" href="#angularjs-pageslide-directive"><span class="octicon octicon-link"></span></a>                
+                AngularJS
+                pageslide 
+                directive
             </h1>
         </header>
 
         <section id="main_content" class="inner">
 
             <p>
-                An <a href="http://angularjs.org/">AngularJS</a> directive which slides another panel over your browser to
-                reveal an additional interaction pane.<br/> It does all the css manipulation needed to position your content
-                off canvas with html attibutes and it does not depend on jQuery
+Four components built on <pre>ng-pageslide</pre>
             </p>
 
-            <h3>my stuff</h3>
-            <ps-user-form></ps-user-form>
+            <h3>the components</h3>
+            <para>
+                These components are single use.
+            </para>
+            <ps-nav></ps-nav>
+            <ps-message></ps-message>           
+            <ps-toastr></ps-toastr>
 
-<div ng-if="true">
-            <div ng-controller="pageslideCtrl as vm">
-                <a class="large button" href="" ng-click="vm.toggle()">Open Demo</a>
-                <div pageslide ps-open="vm.checked">
-                    <div style="padding:20px" id="demo-right">
-                        <h2>Hello Pageslide</h2>
-                        <p>Put here whatever you want</p>
-                        <a ng-click="vm.toggle()" class="button">Close</a>
+
+            <para>This component is custom built for adding/updating something:</para>
+            <para>
+                 <ps-user-form user-id="999" ok="vm."></ps-user-form>
+            </para>
+
+<!--
+
+
+            <div ng-if="true">
+                <div ng-controller="pageslideCtrl as vm">
+                    <a class="large button" href="" ng-click="vm.toggle()">Open Demo</a>
+                    <div pageslide ps-open="vm.checked">
+                        <div style="padding:20px" id="demo-right">
+                            <h2>Hello Pageslide</h2>
+                            <p>Put here whatever you want</p>
+                            <a ng-click="vm.toggle()" class="button">Close</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <h3>Different directions</h3>
-            <div ng-controller="pageslideCtrl as vm">
-                <a class="tiny button" href="" ng-click="vm.toggle()">Up up and above</a>
-                <div pageslide ps-open="vm.checked" ps-side="top">
-                    <div style="padding:20px" id="demo-right">
-                        <h2>Hello Pageslide</h2>
-                        <p>Put here whatever you want</p>
-                        <a ng-click="vm.toggle()" class="button">Close</a>
+                <h3>Different directions</h3>
+                <div ng-controller="pageslideCtrl as vm">
+                    <a class="tiny button" href="" ng-click="vm.toggle()">Up up and above</a>
+                    <div pageslide ps-open="vm.checked" ps-side="top">
+                        <div style="padding:20px" id="demo-right">
+                            <h2>Hello Pageslide</h2>
+                            <p>Put here whatever you want</p>
+                            <a ng-click="vm.toggle()" class="button">Close</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div ng-controller="pageslideCtrl as vm">
-                <a class="tiny button" href="" ng-click="vm.toggle()">Go west</a>
-                <div pageslide ps-open="vm.checked" ps-side="left">
-                    <div style="padding:20px" id="demo-right">
-                        <h2>Hello Pageslide</h2>
-                        <p>Put here whatever you want</p>
-                        <a ng-click="vm.toggle()" class="button">Close</a>
+                <div ng-controller="pageslideCtrl as vm">
+                    <a class="tiny button" href="" ng-click="vm.toggle()">Go west</a>
+                    <div pageslide ps-open="vm.checked" ps-side="left">
+                        <div style="padding:20px" id="demo-right">
+                            <h2>Hello Pageslide</h2>
+                            <p>Put here whatever you want</p>
+                            <a ng-click="vm.toggle()" class="button">Close</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--
-            <h3>Push content</h3>
-            <div ng-controller="pageslideCtrl as vm">
-                <a class="tiny button" href="" ng-click="vm.toggle()">Open Sidebar</a>
-                <div pageslide ps-open="vm.checked" ps-side="left" ps-push="true">
-                    <div style="padding:20px" id="demo-right">
-                        <h2>Hello Pageslide</h2>
-                        <p>Put here whatever you want</p>
-                        <a ng-click="vm.toggle()" class="button">Close</a>
+
+                <h3>Push content</h3>
+                <div ng-controller="pageslideCtrl as vm">
+                    <a class="tiny button" href="" ng-click="vm.toggle()">Open Sidebar</a>
+                    <div pageslide ps-open="vm.checked" ps-side="left" ps-push="true">
+                        <div style="padding:20px" id="demo-right">
+                            <h2>Hello Pageslide</h2>
+                            <p>Put here whatever you want</p>
+                            <a ng-click="vm.toggle()" class="button">Close</a>
+                        </div>
                     </div>
                 </div>
-            </div>-->
 
-            <h3>Escape key to close</h3>
-            <div ng-controller="pageslideCtrl as vm">
-                <a class="tiny button" href="" ng-click="vm.toggle()">Open sidebar</a>
-                <div pageslide ps-open="vm.checked" ps-key-listener="true">
-                    <div style="padding:20px" id="demo-right">
-                        <h2>Hello Pageslide</h2>
-                        <p>hit the escape key to close the sidebar</p>
-                        <a ng-click="vm.toggle()" class="button">Close</a>
+                <h3>Escape key to close</h3>
+                <div ng-controller="pageslideCtrl as vm">
+                    <a class="tiny button" href="" ng-click="vm.toggle()">Open sidebar</a>
+                    <div pageslide ps-open="vm.checked" ps-key-listener="true">
+                        <div style="padding:20px" id="demo-right">
+                            <h2>Hello Pageslide</h2>
+                            <p>hit the escape key to close the sidebar</p>
+                            <a ng-click="vm.toggle()" class="button">Close</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <br/>
+                <br/>
 
-            <h3>Custom class on container</h3>
-            <div ng-controller="pageslideCtrl as vm">
-                <p>Check to open: <input type="checkbox" ng-model="vm.checked"></p>
-                <pageslide ps-open="vm.checked" ps-body-class="true">
-                    <div style="padding:20px">
-                        <h2>Yo Pageslide</h2>
-                        <p>Put here whatever you want</p>
-                        <p><a ng-click="vm.toggle()" class="button">Close</a></p>
-                    </div>
-                </pageslide>
-            </div>
+                <h3>Custom class on container</h3>
+                <div ng-controller="pageslideCtrl as vm">
+                    <p>Check to open: <input type="checkbox" ng-model="vm.checked"></p>
+                    <pageslide ps-open="vm.checked" ps-body-class="true">
+                        <div style="padding:20px">
+                            <h2>Yo Pageslide</h2>
+                            <p>Put here whatever you want</p>
+                            <p><a ng-click="vm.toggle()" class="button">Close</a></p>
+                        </div>
+                    </pageslide>
+                </div>
 
-            <div ng-controller="pageslideCtrl as vm">
-                <h3>Avoid click outside</h3>
-                <p>Check to open: <input type="checkbox" ng-model="vm.checked"></p>
-                <pageslide ps-open="vm.checked" ps-body-class="true" ps-click-outside="false">
-                    <div style="padding:20px">
-                        <h2>Yo Pageslide</h2>
-                        <p>Put here whatever you want</p>
-                        <p><a ng-click="vm.toggle()" class="button">Close</a></p>
-                    </div>
-                </pageslide>
-            </div>
+                <div ng-controller="pageslideCtrl as vm">
+                    <h3>Avoid click outside</h3>
+                    <p>Check to open: <input type="checkbox" ng-model="vm.checked"></p>
+                    <pageslide ps-open="vm.checked" ps-body-class="true" ps-click-outside="false">
+                        <div style="padding:20px">
+                            <h2>Yo Pageslide</h2>
+                            <p>Put here whatever you want</p>
+                            <p><a ng-click="vm.toggle()" class="button">Close</a></p>
+                        </div>
+                    </pageslide>
+                </div>
 
-            <div ng-controller="pageslideCtrl as vm">
-                <h3>Dynamic psSize</h3>
-                <p>Check to open: <input type="checkbox" ng-model="vm.checked"></p>
-                <p>psSize <input type="text" ng-model="size"></p>
-                <pageslide ps-open="vm.checked" ps-click-outside="false" ps-size="{{size}}">
-                    <div style="padding:20px">
-                        <h2>Yo Pageslide</h2>
-                        <p>Put here whatever you want</p>
-                    </div>
-                </pageslide>
-            </div>
+                <div ng-controller="pageslideCtrl as vm">
+                    <h3>Dynamic psSize</h3>
+                    <p>Check to open: <input type="checkbox" ng-model="vm.checked"></p>
+                    <p>psSize <input type="text" ng-model="size"></p>
+                    <pageslide ps-open="vm.checked" ps-click-outside="false" ps-size="{{size}}">
+                        <div style="padding:20px">
+                            <h2>Yo Pageslide</h2>
+                            <p>Put here whatever you want</p>
+                        </div>
+                    </pageslide>
+                </div>
 
-            <div ng-controller="pageslideCtrl as vm">
-                <h3>Auto close</h3>
-                <p>Check to open: <input type="checkbox" ng-model="vm.checked"></p>
-                <pageslide ps-open="vm.checked" ps-auto-close="true">
-                    <div style="padding:20px">
-                        <h2>Yo Pageslide</h2>
-                        <p>Put here whatever you want</p>
-                        <button ng-click="vm.mockRouteChange()">Change Route</button>
-                    </div>
-                </pageslide>
-            </div>
+                <div ng-controller="pageslideCtrl as vm">
+                    <h3>Auto close</h3>
+                    <p>Check to open: <input type="checkbox" ng-model="vm.checked"></p>
+                    <pageslide ps-open="vm.checked" ps-auto-close="true">
+                        <div style="padding:20px">
+                            <h2>Yo Pageslide</h2>
+                            <p>Put here whatever you want</p>
+                            <button ng-click="vm.mockRouteChange()">Change Route</button>
+                        </div>
+                    </pageslide>
+                </div>
 
-            <div ng-controller="pageslideCtrl as vm">
-                <h3>Open Close callbacks</h3>
-                <p>Check to open: <input type="checkbox" ng-model="vm.checked"></p>
-                <pageslide ps-open="vm.checked" vm.onopen="vm.onopen" onclose="vm.onclose">
-                    <div style="padding:20px">
-                        <h2>Yo Pageslide</h2>
-                        <p>meh</p>
-                    </div>
-                </pageslide>
-            </div>
+                <div ng-controller="pageslideCtrl as vm">
+                    <h3>Open Close callbacks</h3>
+                    <p>Check to open: <input type="checkbox" ng-model="vm.checked"></p>
+                    <pageslide ps-open="vm.checked" vm.onopen="vm.onopen" onclose="vm.onclose">
+                        <div style="padding:20px">
+                            <h2>Yo Pageslide</h2>
+                            <p>meh</p>
+                        </div>
+                    </pageslide>
+                </div>
 
-            <div id='container1'>
-                <p>
-                    Pastrami pork belly strip steak meatball boudin pork. Beef doner pastrami leberkas. Frankfurter swine boudin doner. Bacon
-                    drumstick chicken landjaeger filet mignon pancetta. Corned beef leberkas frankfurter kevin. Tongue frankfurter
-                    pastrami, pork biltong alcatra leberkas meatloaf boudin strip steak spare ribs pork chop turkey.
-                </p>
-            </div>
+                <div id='container1'>
+                    <p>
+                        Pastrami pork belly strip steak meatball boudin pork. Beef doner pastrami leberkas. Frankfurter swine boudin doner. Bacon
+                        drumstick chicken landjaeger filet mignon pancetta. Corned beef leberkas frankfurter kevin. Tongue
+                        frankfurter pastrami, pork biltong alcatra leberkas meatloaf boudin strip steak spare ribs pork chop
+                        turkey.
+                    </p>
+                </div>
 
-            <div ng-controller="pageslideCtrl as vm">
-                <h3>In a container</h3>
-                <p>Check to open: <input type="checkbox" ng-model="vm.checked"></p>
-                <pageslide ps-push='true' ps-open="vm.checked" ps-container='container1'>
-                    <div style="padding:20px">
-                        <h2>Yo Pageslide</h2>
-                        <p>meh</p>
-                    </div>
-                </pageslide>
-            </div>
+                <div ng-controller="pageslideCtrl as vm">
+                    <h3>In a container</h3>
+                    <p>Check to open: <input type="checkbox" ng-model="vm.checked"></p>
+                    <pageslide ps-push='true' ps-open="vm.checked" ps-container='container1'>
+                        <div style="padding:20px">
+                            <h2>Yo Pageslide</h2>
+                            <p>meh</p>
+                        </div>
+                    </pageslide>
+                </div>
 
-            <div id='container2'>
-                <p>
-                    Pastrami pork belly strip steak meatball boudin pork. Beef doner pastrami leberkas. Frankfurter swine boudin doner. Bacon
-                    drumstick chicken landjaeger filet mignon pancetta. Corned beef leberkas frankfurter kevin. Tongue frankfurter
-                    pastrami, pork biltong alcatra leberkas meatloaf boudin strip steak spare ribs pork chop turkey.
-                </p>
-            </div>
+                <div id='container2'>
+                    <p>
+                        Pastrami pork belly strip steak meatball boudin pork. Beef doner pastrami leberkas. Frankfurter swine boudin doner. Bacon
+                        drumstick chicken landjaeger filet mignon pancetta. Corned beef leberkas frankfurter kevin. Tongue
+                        frankfurter pastrami, pork biltong alcatra leberkas meatloaf boudin strip steak spare ribs pork chop
+                        turkey.
+                    </p>
+                </div>
 
-            <div ng-controller="pageslideCtrl as vm">
-                <h3>In a container with directions</h3>
-                <p>Check to open: <input type="checkbox" ng-model="vm.checked"></p>
-                <pageslide ps-side='bottom' ps-open="vm.checked" ps-container='container2'>
-                    <div style="padding:20px">
-                        <h2>Yo Pageslide</h2>
-                        <p>meh</p>
-                    </div>
-                </pageslide>
-            </div>
-
+                <div ng-controller="pageslideCtrl as vm">
+                    <h3>In a container with directions</h3>
+                    <p>Check to open: <input type="checkbox" ng-model="vm.checked"></p>
+                    <pageslide ps-side='bottom' ps-open="vm.checked" ps-container='container2'>
+                        <div style="padding:20px">
+                            <h2>Yo Pageslide</h2>
+                            <p>meh</p>
+                        </div>
+                    </pageslide>
+                </div>
+                -->
             </div>
         </section>
     </div>
