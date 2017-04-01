@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "module": "system",
+        "target": "es5",
+        "noImplicitAny": true,
+        "outFile": "dist/app.min.js",
+        "sourceMap": true,
+        "noEmitOnError": true ,
+        "noResolve": true      
+    },
+    "include":[
+        "./**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "node_modules/@types",
+        "typings"
+    ]
+}

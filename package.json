@@ -14,11 +14,16 @@
     "modal",
     "pane"
   ],
+  "scripts": {
+    "prepublish": "grunt",
+    "test": "grunt test",
+    "examples": "http-server ./examples"
+  },
   "version": "2.1.4",
   "license": "MIT",
   "devDependencies": {
-    "angular": "1.5.5",
-    "angular-mocks": "1.5.5",
+    "angular": "1.6.2",
+    "angular-mocks": "1.6.2",
     "grunt": "0.4.5",
     "grunt-cli": "1.2.0",
     "grunt-contrib-concat": "0.3.0",
@@ -36,9 +41,9 @@
   "peerDependencies": {
     "angular": "1.5.x"
   },
-  "scripts": {
-    "prepublish": "grunt",
-    "test": "grunt test",
-    "examples": "http-server ./examples"
+  "dependencies": {
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-config-airbnb-base": "^11.1.2",
+    "eslint-plugin-import": "^2.2.0"
   }
 }
