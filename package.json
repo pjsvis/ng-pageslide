@@ -42,6 +42,7 @@
     "angular": "1.5.x"
   },
   "dependencies": {
+    "@types/angular": "^1.6.14",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-config-airbnb-base": "^11.1.2",
     "eslint-plugin-import": "^2.2.0"
