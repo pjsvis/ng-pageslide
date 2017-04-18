@@ -1,3 +1,4 @@
+
 angular.module("app").component('psUserForm', {
     bindings: {
 
@@ -19,7 +20,13 @@ angular.module("app").component('psUserForm', {
             vm.checked = !vm.checked
         }
 
+        /**
+         * Add available test suite to active test suites
+         * 
+         * @param {ITestSuite} suite 
+         */
         function add(suite: ITestSuite) {
+             debugger;
             let testSuites: ITestSuite[] = angular.copy(vm.testSuites);
             testSuites.push(suite);
             vm.testSuites = testSuites
@@ -28,16 +35,20 @@ angular.module("app").component('psUserForm', {
             vm.availableTestSuites.splice(index, 1);
         }
 
+        /**
+         * Add active test suite to available test suites
+         * 
+         * @param {ITestSuite} suite 
+         */
         function remove(suite: ITestSuite) {
+            debugger;
             let availableTestSuites: ITestSuite[] = angular.copy(vm.availableTestSuites);
             availableTestSuites.push(suite);
             vm.availableTestSuites = availableTestSuites;
 
-           let index = vm.testSuites.indexOf(suite);
+            let index = vm.testSuites.indexOf(suite);
             vm.testSuites = vm.testSuites.splice(index, 1);
         }
-
-
     },
     template: `
     <style>

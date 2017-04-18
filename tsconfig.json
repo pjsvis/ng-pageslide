@@ -6,9 +6,11 @@
         "outFile": "dist/app.min.js",
         "sourceMap": true,
         "noEmitOnError": true ,
-        "noResolve": true      
+        "noResolve": true,
+        "newLine": "CRLF"   
     },
     "include":[
+        "./examples/app.ts",
         "./**/*.ts"
     ],
     "exclude": [

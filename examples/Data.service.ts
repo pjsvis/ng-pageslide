@@ -1,3 +1,8 @@
+/**
+ * Test Suite with Id and Name
+ * 
+ * @interface ITestSuite
+ */
 interface ITestSuite {
     Id: number;
     Name: string;
@@ -5,6 +10,11 @@ interface ITestSuite {
 
 }
 
+/**
+ * Active and available test suites
+ * 
+ * @interface IDataService
+ */
 interface IDataService {
     availableTestSuites: ITestSuite[];
     testSuites: ITestSuite[];
